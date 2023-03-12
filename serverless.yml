@@ -1,0 +1,88 @@
+service: newbie
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region:  us-west-2
+# serverless.yml
+
+plugins:
+  - serverless-offline
+
+functions:
+  app:
+    handler: index.handler
+    events:
+      - http: ANY /
+      - http: 'ANY {proxy+}'
+  getUser:
+    handler: index.handler
+    events:
+      - http: 'GET /users/{proxy+}'
+  createUser:
+    handler: index.handler
+    events:
+      - http: 'POST /users'
+  updateUser:
+    handler: index.handler
+    events:
+      - http: 'PATCH /users/:userId'
+  checkinUser:
+    handler: index.handler
+    events:
+      - http: 'POST /users/checkin'
+  getAuth:
+    handler: index.handler
+    events:
+      - http: 'GET /auth/{proxy+}'
+  signinUser:
+    handler: index.handler
+    events:
+      - http: 'POST /auth'
+  getBathroom:
+    handler: index.handler
+    events:
+      - http: 'GET /bathroom/{proxy+}'
+  newBathroom:
+    handler: index.handler
+    events:
+      - http: 'POST /bathroom'
+  verifyBathroom:
+    handler: index.handler
+    events:
+      - http: 'POST /verify'
+  unverifiedBathroom:
+    handler: index.handler
+    events:
+      - http: 'GET /unverified/{proxy+}'
+
+AWS::S3::Bucket:
+  BucketName: whizz-bucket
+  AccessControl: PublicRead
+  VersioningConfiguration:
+    Status: Enabled
+AWS::IAM::Role:
+  RoleName: whizz-bucket-role
+  AssumeRolePolicyDocument:
+    Version: 2012-10-17
+    Statement:
+      - Effect: Allow
+        Principal:
+          Service:
+            - s3.amazonaws.com
+        Action:
+          - 'sts:AssumeRole'
+  ManagedPolicyArns:
+    - arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess
+AWS::S3::BucketPolicy:
+  BucketName: whizz-bucket
+  PolicyDocument:
+    Version: 2012-10-17
+    Statement:
+      - Effect: Allow
+        Principal:
+          AWS: whizz-bucket-role
+        Action:
+          - 's3:GetObject'
+        Resource: 'arn:aws:s3:::whizz-bucket/*'
