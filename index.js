@@ -2,6 +2,11 @@ const serverless = require("serverless-http");
 const express = require("express");
 const bodyParser = require('body-parser')
 const cors = require("cors")
+const Auth = require('./models/Auth-Model')
+const Bathreview = require('./models/Bathreview-Model')
+const Bathroom = require('./models/Bathroom-Model')
+const Unverified = require('./models/Unverified-Model')
+const User = require('./models/User-Model')
 //require('aws-sdk/lib/maintenance_mode_message').suppress = true;
 const app = express();
 app.use(cors());
