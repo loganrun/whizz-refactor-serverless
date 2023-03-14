@@ -1,0 +1,12 @@
+{
+    "type": "service_account",
+    "project_id": "weetime",
+    "private_key_id": "2d35f83b44dbf060c965f32874c7a340d0e770c8",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDfTZP67NQOoLm7\nluGW3YAQwWERQ7Hcqro0P0vc3BqODG5B9c1OBANTkMnq+dbnBRGOyFKwjoN2LElM\n/rEc3OYhoyf20GKe57ZLX9q9IDeLY9y0BUzO+zQ0GOemkUe2Aom9a5u53+Zsvj3d\nPgSYn+nQZF3CmM0Mgf0J6ZAOKlFMHoeW/tP0/rfiqCVdGgA8FzsaaAyrXXQACdHC\nLjRosC3kTYJ1owhdfcsBH3ypNrxOvtTqFkKqnBm5JX2wEB4HV4pQbF7f9aKhOLJP\n+ltCEqtNMirJlVYx34PNxSrGVoSTgDx1wcDUjvmdcox6z0q/DTRbfNmmAJBXS5J+\nzYvc2vWxAgMBAAECggEAAVpJ9DItEq2ckmtWkIBk/zT8rosXb7vFBv3/KqZWrtea\nb2HazYcusfnljzvWNm4Mbi3+ej1SxIt+Ii5EymT4K+n+GvumLUpAC3LYM18XlwuS\n0bBah8JzzYD9HkAxDAQ162TUe6rEjZIVc9qlUntdgjqpar1cOKAs9Ttp+Pv+pBRk\nXQMsoIpVsMiNZZXMuoiEJRZQUBAg7zibroFz5mmsJvSqKH8fnn5OpKQ4mQQBYixF\nLAOxxxbuH+dF4xIAnJ6QLdu0W18odZC0zp80D1z0SwcjCW4UXLlRm2VWiNzwwBbx\n53tIPmcdKTi8myfq0jDd2VTKyL/Wc9HhomsAOdCmZQKBgQD9sZTUELzucaE9+qpG\nkAGs0M4MGhQKjY0NBG/7vX8D4AK7H3BUWbG5tXjtvI+VldcX1fq5xXJd+zQ62BLs\nDN8ZWQR449Ay8tRSvtyqKwWs+66Mc6A+iF176Wkkmwm5fuM3vApiGGfw8T/tsHiZ\nI/JB05IHnGGhchUWkXV7DYiE8wKBgQDhVUTU3x92LnPD1HIaLtP9dIKHvX7vWP0n\nU+c6sKBbQ5qqNxBzxzrkMKexl8pcIPJ6ehPuRhOrunY7h3Sx5l4iBk/mlKPu5HOb\n+Eh0wUdAGm0B63v/SPz7Lef/l1N9rkfnbsuJf06mcPBQMIe3VvQ7RRXzOEr5bv4X\nI77TBjaTywKBgEsmzeW8R5uDAbbwiHx6sGRXPpKLLyCpKf2PMPUr/3JQa76u44G5\nSFKxFW+niglP5/Xhp3JcsTJx9djwpTpT3csOeaquIcDV+lvAunGWaQoDTIPCxNeB\nYeARFtqHKuxOUFT0WUcR38iaTsvEmRUUdvFVEU873hgLSX/z+w9GxQhNAoGALDux\n3FvEcE2kGgAdOfiRUsLJUN4pCdEdONgmnwXHJMM7nEhc6W1lqR/H+3vBlJ4/Gz3V\npcOJ3v8mcH8hsD55ohI9IxVwrNeZvjdZ+dlrJDFLzsGsQKvSRXh4f1r0X8qTgOHm\nAKLGDLRE6Gjua1YdcXkZWvpk9VwNcvtoXUJt+ksCgYAfZDZn09WOirA31PiziX87\nd9kbyUWuB/9pCx1JUrWrow1TwygONHn8xp0yvwBnFBlW2PubmuQgqFB787skk5u0\nJ850pbBIGWMtiqA/Qm9MdqYvwx3Xk5hR4PvbxXlF+ZsjePvfrOOXTWlBbnOu54lr\nLIzFtNU94Vxyfca2bArsYA==\n-----END PRIVATE KEY-----\n",
+    "client_email": "adsup-652@weetime.iam.gserviceaccount.com",
+    "client_id": "118057143614261924055",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/adsup-652%40weetime.iam.gserviceaccount.com"
+}
