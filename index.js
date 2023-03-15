@@ -1,5 +1,9 @@
 const serverless = require("serverless-http");
+import * as dotenv from 'dotenv'
+dotenv.config()
 const express = require("express");
+const mongoose = require("mongoose");
+const db = process.env.mongoURI
 const bodyParser = require('body-parser')
 const cors = require("cors")
 const Auth = require('./models/Auth-Model')
@@ -11,6 +15,20 @@ const User = require('./models/User-Model')
 const app = express();
 app.use(cors());
 app.use(bodyParser.json())
+
+const client = async () => {
+  try {
+    await mongoose.connect(db, {
+      useNewUrlParser: true,
+      useCreateIndex: true,
+      useFindAndModify: false
+    });
+    console.log("mongoDb connected");
+  } catch (err) {
+    console.error(err.message);
+    process.exit(1);
+  }
+};
 
 app.get("/", (req, res, next) => {
   return res.status(200).json({
