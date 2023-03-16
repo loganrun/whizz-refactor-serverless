@@ -1,9 +1,8 @@
 const serverless = require("serverless-http");
-import * as dotenv from 'dotenv'
-dotenv.config()
+require('dotenv').config()
 const express = require("express");
 const mongoose = require("mongoose");
-const db = process.env.mongoURI
+
 const bodyParser = require('body-parser')
 const cors = require("cors")
 const Auth = require('./models/Auth-Model')
@@ -16,24 +15,44 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json())
 
+const db = process.env.mongoURI  //"mongodb+srv://LoganNew:AgoLngtoLauNch3B@whizz1-7dh5i.mongodb.net/Whizbase?retryWrites=true&w=majority"
+let conn = null
+
 const client = async () => {
+  if (conn==null){
   try {
-    await mongoose.connect(db, {
-      useNewUrlParser: true,
-      useCreateIndex: true,
-      useFindAndModify: false
+    conn = await mongoose.connect(db, {
+      serverSelectionTimeoutMS: 5000
     });
     console.log("mongoDb connected");
   } catch (err) {
     console.error(err.message);
     process.exit(1);
   }
+}
+
+return conn
 };
 
-app.get("/", (req, res, next) => {
-  return res.status(200).json({
-    message: "Hello from root!",
-  });
+
+app.get("/", async (req, res, next) => {
+  
+  if(conn==null){
+    try {
+      await client()
+      
+    } catch (error) {
+      res.json({error: error.message})
+    }
+  }
+  try {
+    return res.status(200).json({
+      message: "Hello from root!",
+    });  
+  } catch (error) {
+    res.json({error: error.message})
+  }
+  
 });
 
 app.get("/users", (req, res, next) => {
