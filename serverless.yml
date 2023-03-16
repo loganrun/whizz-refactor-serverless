@@ -58,32 +58,4 @@ functions:
     events:
       - http: 'GET /unverified/{proxy+}'
 
-# AWS::S3::Bucket:
-#   BucketName: whizz-bucket
-#   AccessControl: PublicRead
-#   VersioningConfiguration:
-#     Status: Enabled
-# AWS::IAM::Role:
-#   RoleName: whizz-bucket-role
-#   AssumeRolePolicyDocument:
-#     Version: 2012-10-17
-#     Statement:
-#       - Effect: Allow
-#         Principal:
-#           Service:
-#             - s3.amazonaws.com
-#         Action:
-#           - 'sts:AssumeRole'
-#   ManagedPolicyArns:
-#     - arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess
-# AWS::S3::BucketPolicy:
-#   BucketName: whizz-bucket
-#   PolicyDocument:
-#     Version: 2012-10-17
-#     Statement:
-#       - Effect: Allow
-#         Principal:
-#           AWS: whizz-bucket-role
-#         Action:
-#           - 's3:GetObject'
-#         Resource: 'arn:aws:s3:::whizz-bucket/*'
+
