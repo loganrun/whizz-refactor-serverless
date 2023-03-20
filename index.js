@@ -46,11 +46,30 @@ app.get("/", async (req, res, next) => {
     }
   }
   try {
-    return res.status(200).json({
-      message: "Hello from root!",
-    });  
-  } catch (error) {
-    res.json({error: error.message})
+    const bathroom = await Bathroom.aggregate([
+     {
+         $geoNear: {
+             near: {
+                 type: "Point",
+                 coordinates: [
+                   parseFloat(req.query.lng),//lng, //-118.243683,
+                   parseFloat(req.query.lat) //lat  //34.052235
+                 ]
+             },
+             distanceField: "distance",
+            //  "maxDistance": 16093.0,
+             spherical: true,
+             distanceMultiplier: .00062137119
+         }
+     }
+   ])
+ 
+        
+    res.json(bathroom)
+   
+  } catch (err) {
+    console.error(err.message);
+    return res.status(500).send("server error");
   }
   
 });
