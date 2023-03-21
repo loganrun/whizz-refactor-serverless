@@ -40,7 +40,7 @@ functions:
   signinUser:
     handler: index.handler
     events:
-      - http: 'POST /auth'
+      - http: 'POST /login'
   getBathroom:
     handler: index.handler
     events:
